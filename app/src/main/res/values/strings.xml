@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Don\'t Starve</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">哈哈</string>
+    <string name="hp">生命：</string>
+    <string name="san">精神：</string>
+    <string name="hun">饥饿：</string>
+    <string name="dmg">伤害：</string>
+    <string name="hunNeed">饥饿消耗：</string>
+</resources>
