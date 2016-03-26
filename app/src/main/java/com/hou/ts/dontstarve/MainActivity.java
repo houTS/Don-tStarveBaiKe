@@ -13,6 +13,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.nostra13.universalimageloader.core.ImageLoader;
+import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
+
 import BmobTable.BmobKey;
 import cn.bmob.v3.Bmob;
 import fragment.role_fragment;
@@ -24,7 +27,10 @@ public class MainActivity extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         Bmob.initialize(getApplicationContext(), BmobKey.getApp_ID());
+        setImageLoader();
+
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -39,6 +45,14 @@ public class MainActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
         setDefaultFragment();
+    }
+
+    /*
+    设置imageloader的全局配置，第三方开源库，必须设置,这里是默认，具体的imageview会再次设置
+     */
+    private void setImageLoader() {
+        ImageLoaderConfiguration configuration=ImageLoaderConfiguration.createDefault(this);
+        ImageLoader.getInstance().init(configuration);
     }
 
     private void setDefaultFragment() {
@@ -113,8 +127,6 @@ public class MainActivity extends AppCompatActivity
     private void showToast(String mess) {
         Toast.makeText(this, mess, Toast.LENGTH_SHORT).show();
     }
-
-
 
 
     private long firstTime = 0;

@@ -9,6 +9,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.nostra13.universalimageloader.core.DisplayImageOptions;
+import com.nostra13.universalimageloader.core.ImageLoader;
+
 import BmobTable.allRole;
 
 /**
@@ -45,7 +48,6 @@ public class roleShow extends Activity {
     }
 
     private void initData() {
-        role.getRoleImg().loadImage(this,roleImg);
         roleName.setText(role.getRoleName());
         HP.setText(role.getHP());
         SAN.setText(role.getSAN());
@@ -55,5 +57,13 @@ public class roleShow extends Activity {
         roleExp.setText(role.getRoleExp());
         special.setText(role.getSpecial());
         roleInfo.setText(role.getRoleInfo());
+//        role.getRoleImg().loadImage(this,roleImg);
+        DisplayImageOptions options=new DisplayImageOptions.Builder()
+                .showImageOnLoading(R.drawable.loading)
+                .showImageOnFail(R.drawable.error)
+                .cacheInMemory(true)
+                .cacheOnDisk(true)
+                .build();
+        ImageLoader.getInstance().displayImage(role.getRoleImg().getFileUrl(this),roleImg, options);
     }
 }
