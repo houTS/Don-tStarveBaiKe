@@ -18,6 +18,7 @@ import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 
 import BmobTable.BmobKey;
 import cn.bmob.v3.Bmob;
+import fragment.food_fragment;
 import fragment.role_fragment;
 import fragment.test_fragment;
 
@@ -103,7 +104,7 @@ public class MainActivity extends AppCompatActivity
             getFragmentManager().beginTransaction().replace(R.id.mfra, new role_fragment()).commit();
         } else if (id == R.id.nav_gallery) {
             showToast("待定");
-            getFragmentManager().beginTransaction().replace(R.id.mfra, new test_fragment()).commit();
+            getFragmentManager().beginTransaction().replace(R.id.mfra, new food_fragment()).commit();
         } else if (id == R.id.nav_slideshow) {
             showToast("待定2");
             getFragmentManager().beginTransaction().replace(R.id.mfra, new role_fragment()).commit();

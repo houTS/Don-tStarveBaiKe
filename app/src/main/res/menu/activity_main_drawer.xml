@@ -5,11 +5,11 @@
         <item android:id="@+id/nav_camara" android:icon="@android:drawable/ic_menu_camera"
             android:title="角色" />
         <item android:id="@+id/nav_gallery" android:icon="@android:drawable/ic_menu_gallery"
-            android:title="待定" />
+            android:title="食物" />
         <item android:id="@+id/nav_slideshow" android:icon="@android:drawable/ic_menu_slideshow"
-            android:title="待定2" />
+            android:title="生物" />
         <item android:id="@+id/nav_manage" android:icon="@android:drawable/ic_menu_manage"
-            android:title="待定3" />
+            android:title="科技" />
     </group>
 
     <item android:title="石头门">
